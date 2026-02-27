@@ -56,10 +56,34 @@
 
   // --- Phase 2: OCR Scan (triggered by popup) ---
 
+  const MAX_IMAGE_DIM = 1024;
+
   async function imageUrlToBase64(url) {
     try {
       const resp = await fetch(url);
       const blob = await resp.blob();
+      const bmp = await createImageBitmap(blob);
+      const { width, height } = bmp;
+
+      // Downscale if either dimension exceeds MAX_IMAGE_DIM
+      if (width > MAX_IMAGE_DIM || height > MAX_IMAGE_DIM) {
+        const scale = MAX_IMAGE_DIM / Math.max(width, height);
+        const w = Math.round(width * scale);
+        const h = Math.round(height * scale);
+        const canvas = new OffscreenCanvas(w, h);
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(bmp, 0, 0, w, h);
+        bmp.close();
+        const resizedBlob = await canvas.convertToBlob({ type: "image/jpeg", quality: 0.85 });
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(resizedBlob);
+        });
+      }
+
+      bmp.close();
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onloadend = () => resolve(reader.result);
