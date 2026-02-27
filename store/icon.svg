@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <defs>
+        <path d="M23.371308,86 C35.0281294,82.7072464 45.9563994,77.1507246 56.1561181,69.3304348 C60.5274262,73.0347826 64.8987342,76.0188406 69.2700422,78.2826087 C74.0576653,80.7521739 80.302391,83.2217391 88.0042194,85.6913043 C89.6694796,82.8101449 91.3347398,80.2376812 93,77.973913 C85.0900141,76.1217391 79.2616034,74.3724638 75.5147679,72.726087 C70.1026723,70.2565217 65.3150492,67.3753623 61.1518987,64.0826087 C65.5232068,59.1434783 68.6455696,54.615942 70.5189873,50.5 C72.6005626,46.7956522 74.6821378,41.2391304 76.7637131,33.8304348 L76.7637131,33.8304348 L91.1265823,33.8304348 L91.1265823,27.3478261 L59.9029536,27.3478261 L59.9029536,15 L52.4092827,15 L52.4092827,27.3478261 L20.5611814,27.3478261 L20.5611814,33.8304348 L35.8607595,33.8304348 C37.1097046,39.3869565 38.8790436,44.6347826 41.1687764,49.573913 C43.0421941,53.484058 46.3727145,58.3202899 51.1603376,64.0826087 C46.7890295,67.7869565 42.9381153,70.3594203 39.6075949,71.8 C32.7383966,75.0927536 25.8691983,77.4594203 19,78.9 C21.0815752,81.7811594 22.5386779,84.1478261 23.371308,86 Z M56.4683544,59.5074627 C49.3909986,51.1345126 45.1237693,42.6569007 43.6666667,34.0746269 L43.6666667,34.0746269 L68.3333333,34.0746269 C66.8762307,39.5170444 65.2109705,44.3314907 63.3375527,48.5179657 C61.8804501,52.0764695 59.5907173,55.7396352 56.4683544,59.5074627 Z" id="path-1"></path>
+        <filter x="-31.9%" y="-31.3%" width="164.9%" height="163.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#BD1564" x="0" y="0" width="128" height="128" rx="24"></rect>
+            <g id="文">
+                <use fill="#000000" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+            <g id="Group" filter="url(#filter-2)" transform="translate(67.000000, 64.000000)" stroke="#FFFFFF" stroke-opacity="0.9">
+                <ellipse id="Oval" stroke-width="6" fill-opacity="0.3" fill="#000000" cx="18.6931818" cy="18.6666667" rx="18.6931818" ry="18.6666667"></ellipse>
+                <line x1="32.0454545" y1="33.0666667" x2="47" y2="48" id="Path" stroke-width="7" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>
