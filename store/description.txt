@@ -1,0 +1,43 @@
+Japanese websites frequently render text as images — both in <img> tags and CSS background-images. This makes the text completely invisible to Ctrl+F. Moji Lens fixes that.
+
+HOW IT WORKS
+
+1. Visit any webpage — Moji Lens automatically detects Japanese text and counts images on the page
+2. Click the extension icon and hit "Scan Page"
+3. Every image is sent to Claude Vision AI for accurate Japanese OCR
+4. Extracted text appears directly on the page, right below each image
+5. Use Ctrl+F to search — it just works
+
+FEATURES
+
+• Accurate Japanese OCR powered by Claude Vision (Haiku) — far superior to traditional OCR for Japanese text
+• Detects both <img> tags and CSS background-image elements
+• Smart caching — images are cached by URL so repeat scans and shared assets across pages cost nothing
+• Works on any website — content script runs on all pages, scans only when you ask
+• Visible OCR results — extracted text appears as small labeled annotations below each image, with native Ctrl+F highlighting
+• Handles float/flex/grid layouts — OCR labels adapt to the page layout without breaking it
+• Progress tracking — real-time progress in the badge and popup, persists if you close and reopen the popup
+• Clear error messages — API issues (insufficient credits, invalid key) are surfaced in the popup, not buried in the console
+
+SETUP
+
+1. Get an API key at console.anthropic.com
+2. Paste it into the Moji Lens settings
+3. Start scanning
+
+Cost is minimal — Claude Haiku is extremely affordable, and Moji Lens caches every result so the same image is never processed twice.
+
+PRIVACY
+
+• Your API key is stored locally in your browser and never sent anywhere except directly to the Anthropic API
+• Images are sent to the Anthropic API only when you explicitly click "Scan Page" — never automatically
+• No analytics, no tracking, no data collection by the extension itself
+• Full privacy policy: [YOUR_PRIVACY_POLICY_URL]
+
+BUILT WITH AI
+
+This extension was built entirely by Claude (Anthropic's AI assistant) in collaboration with a human developer. From architecture to implementation to this store listing — every line of code was written by Claude.
+
+OPEN SOURCE
+
+Source code is available for inspection. No obfuscation, no minification, no bundlers — just clean, readable JavaScript.

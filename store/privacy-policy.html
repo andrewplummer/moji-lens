@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moji Lens — Privacy Policy</title>
+  <style>
+    body {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #333;
+      line-height: 1.7;
+    }
+    h1 { font-size: 24px; margin-bottom: 4px; }
+    .updated { color: #888; font-size: 14px; margin-bottom: 32px; }
+    h2 { font-size: 18px; margin-top: 28px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2563EB; }
+  </style>
+</head>
+<body>
+  <h1>Moji Lens — Privacy Policy</h1>
+  <p class="updated">Last updated: February 27, 2026</p>
+
+  <h2>What Moji Lens Does</h2>
+  <p>Moji Lens is a Chrome extension that extracts Japanese text from images on web pages using optical character recognition (OCR), making the text searchable with your browser's built-in find feature (Ctrl+F).</p>
+
+  <h2>Data We Collect</h2>
+  <p>Moji Lens itself does not collect, store, or transmit any personal data to us. We have no servers, no analytics, and no tracking.</p>
+
+  <h2>Data Stored Locally in Your Browser</h2>
+  <ul>
+    <li><strong>Anthropic API key</strong> — stored in <code>chrome.storage.local</code> so you don't have to re-enter it. Never sent anywhere except directly to the Anthropic API.</li>
+    <li><strong>OCR cache</strong> — extracted text results keyed by image URL, stored in <code>chrome.storage.local</code> to avoid redundant API calls. You can clear this by removing the extension or clearing extension data.</li>
+    <li><strong>Scan progress</strong> — temporary scan state stored in <code>chrome.storage.session</code> (cleared when you close your browser).</li>
+  </ul>
+
+  <h2>Data Sent to Third Parties</h2>
+  <p>When you explicitly click "Scan Page", Moji Lens sends images from the current page to the <strong>Anthropic Messages API</strong> for OCR processing. Specifically:</p>
+  <ul>
+    <li>Images are converted to base64 and sent to <code>https://api.anthropic.com/v1/messages</code></li>
+    <li>Your Anthropic API key is included in the request header for authentication</li>
+    <li>No other data (browsing history, page URLs, personal information) is sent</li>
+    <li>This only happens when you click "Scan Page" — never automatically</li>
+  </ul>
+  <p>Anthropic's handling of API data is governed by their <a href="https://www.anthropic.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://www.anthropic.com/api-terms" target="_blank">API Terms of Service</a>. Per Anthropic's API terms, data sent through the API is not used to train their models.</p>
+
+  <h2>Page Content Access</h2>
+  <p>Moji Lens reads page content (text and image URLs) to:</p>
+  <ul>
+    <li>Detect whether the page contains Japanese text (Unicode range check on <code>document.body.innerText</code>)</li>
+    <li>Identify images that may contain text (<code>&lt;img&gt;</code> tags and CSS <code>background-image</code> elements)</li>
+  </ul>
+  <p>This detection runs automatically on page load but makes zero network requests. It is purely local DOM inspection.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>activeTab</strong> — to access the current tab when you interact with the extension</li>
+    <li><strong>storage</strong> — to store your API key and OCR cache locally</li>
+  </ul>
+
+  <h2>Data Security</h2>
+  <p>All communication with the Anthropic API is over HTTPS. Your API key and cached data are stored in Chrome's built-in extension storage, which is sandboxed per-extension.</p>
+
+  <h2>Your Control</h2>
+  <ul>
+    <li>You choose when to scan — the extension never sends data without your explicit action</li>
+    <li>You can remove your API key at any time by clearing the field in the extension popup</li>
+    <li>You can clear all stored data by removing the extension or going to <code>chrome://extensions</code> → Moji Lens → Details → Clear data</li>
+  </ul>
+
+  <h2>Chrome Web Store User Data Policy Compliance</h2>
+  <p>Moji Lens complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" target="_blank">Chrome Web Store Limited Use requirements</a>. Specifically:</p>
+  <ul>
+    <li>Data is used solely to provide the extension's stated functionality (Japanese image text extraction)</li>
+    <li>Data is not sold to third parties</li>
+    <li>Data is not used for advertising or any purpose unrelated to the extension's core functionality</li>
+    <li>Data is not transferred to third parties except as necessary to provide the OCR feature (Anthropic API), as explicitly consented to by the user</li>
+  </ul>
+
+  <h2>Changes to This Policy</h2>
+  <p>If this policy changes, the updated version will be posted at this URL with a new "last updated" date.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about this privacy policy, please open an issue on the extension's GitHub repository.</p>
+</body>
+</html>
